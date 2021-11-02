@@ -1,15 +1,47 @@
-import _ from 'lodash';
-import './styles.css'
+import './styles.css';
 
- function component() {
-   const element = document.createElement('div');
+const list = document.querySelector('#todo-data');
 
-  // Lodash, currently included via a script, is required for this line to work
-  // Lodash, now imported by this script
-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-   element.classList.add('hello');
+const data = [
+  {
+    description: 'Hello World!',
+    completed: true,
+    index: 1,
+  },
+  {
+    description: 'Learn Javascript',
+    completed: false,
+    index: 2,
+  },
+  {
+    description: 'unlearn Javascript',
+    completed: false,
+    index: 2,
+  },
+];
 
-   return element;
- }
+const todos = data.sort((a, b) => {
+  const indexA = a.index;
+  const indexB = b.index;
 
- document.body.appendChild(component());
+  if (indexA < indexB) {
+    return -1;
+  }
+  if (indexA > indexB) {
+    return 1;
+  }
+  return 0;
+});
+
+function displaylist() {
+  todos.forEach((task) => {
+    const li = document.createElement('li');
+    const text = `<div class="list-container"> <input class='check-input' type='checkbox' value='${task.completed}' aria-label='...'>
+    <p class="todo-text">${task.description}</p><a class="del-menu" href="#"><i class="fas fa-ellipsis-v"></i></a></div>`;
+    li.classList.add('list-item');
+    li.innerHTML = text;
+    list.appendChild(li);
+  });
+}
+
+displaylist();

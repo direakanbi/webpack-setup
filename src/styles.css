@@ -14,7 +14,8 @@ body {
 .title {
   border: none;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 400;
+  margin-bottom: 4rem;
 }
 
 .title-wrapper {
@@ -60,12 +61,6 @@ body {
 
 ::placeholder {
   font-family: italic;
-}
-
-.title {
-  font-size: px;
-  font-weight: 400;
-  margin-bottom: 4rem;
 }
 
 .list-container {

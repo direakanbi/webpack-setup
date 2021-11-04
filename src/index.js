@@ -4,17 +4,17 @@ const list = document.querySelector('#todo-data');
 
 const data = [
   {
-    description: 'Hello World!',
+    description: 'Go swimming',
     completed: true,
     index: 1,
   },
   {
-    description: 'Learn Javascript',
+    description: 'Create an animated puppet',
     completed: false,
     index: 2,
   },
   {
-    description: 'unlearn Javascript',
+    description: 'Hack NASA',
     completed: false,
     index: 2,
   },
@@ -36,7 +36,7 @@ const todos = data.sort((a, b) => {
 function displaylist() {
   todos.forEach((task) => {
     const li = document.createElement('li');
-    const text = `<div class="list-container"> <input class='check-input' type='checkbox' value='${task.completed}' aria-label='...'>
+    const text = `<div class="list-container"> <input type='checkbox' class='check-input' value='${task.completed}' aria-label='...'>
     <p class="todo-text">${task.description}</p><a class="del-menu" href="#"><i class="fas fa-ellipsis-v"></i></a></div>`;
     li.classList.add('list-item');
     li.innerHTML = text;

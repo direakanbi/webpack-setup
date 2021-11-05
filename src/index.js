@@ -1,8 +1,8 @@
 import './styles.css';
+import { displaylist } from './functions';
 
-const list = document.querySelector('#todo-data');
-
-const data = [
+export const list = document.querySelector('#todo-data');
+ const data = [
   {
     description: 'Go swimming',
     completed: true,
@@ -20,7 +20,7 @@ const data = [
   },
 ];
 
-const todos = data.sort((a, b) => {
+export const todos = data.sort((a, b) => {
   const indexA = a.index;
   const indexB = b.index;
 
@@ -33,15 +33,6 @@ const todos = data.sort((a, b) => {
   return 0;
 });
 
-function displaylist() {
-  todos.forEach((task) => {
-    const li = document.createElement('li');
-    const text = `<div class="list-container"> <input type='checkbox' class='check-input' value='${task.completed}' aria-label='...'>
-    <p class="todo-text">${task.description}</p><a class="del-menu" href="#"><i class="fas fa-ellipsis-v"></i></a></div>`;
-    li.classList.add('list-item');
-    li.innerHTML = text;
-    list.appendChild(li);
-  });
-}
-
-displaylist();
+window.addEventListener('load',
+  displaylist(todos, list)
+)

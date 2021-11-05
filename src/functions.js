@@ -1,7 +1,3 @@
- export function getItems() {
-    return JSON.parse(localStorage.getItem('tasks'));
-  }
-
  export function todoList(todoList, list) {
       if (this.getItems() === null) {
         todoList.forEach((task, i) => {

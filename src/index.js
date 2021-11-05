@@ -1,7 +1,7 @@
 import './styles.css';
-import { displaylist } from './functions';
+import displaylist from './functions';
 
-export const list = document.querySelector("#todo-data");
+export const list = document.querySelector('#todo-data');
 const data = [
   {
     description: 'Go swimming',

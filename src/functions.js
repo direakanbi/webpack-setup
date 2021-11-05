@@ -1,4 +1,4 @@
-export function displaylist(todos, list) {
+export default function displaylist(todos, list) {
   todos.forEach((task) => {
     const li = document.createElement('li');
     const text = `<div class="list-container"> <input type='checkbox' class='check-input' value='${task.completed}' aria-label='...'>

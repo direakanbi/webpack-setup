@@ -4,17 +4,17 @@ import { displaylist } from "./functions";
 export const list = document.querySelector("#todo-data");
 const data = [
   {
-    description: "Go swimming",
+    description: 'Go swimming',
     completed: true,
     index: 1,
   },
   {
-    description: "Create an animated puppet",
+    description: 'Create an animated puppet',
     completed: false,
     index: 2,
   },
   {
-    description: "Hack NASA",
+    description:'Hack NASA',
     completed: false,
     index: 2,
   },
@@ -33,4 +33,4 @@ export const todos = data.sort((a, b) => {
   return 0;
 });
 
-window.addEventListener("load", displaylist(todos, list));
+window.addEventListener('load', displaylist(todos, list));

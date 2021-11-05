@@ -1,5 +1,5 @@
-import "./styles.css";
-import { displaylist } from "./functions";
+import './styles.css';
+import { displaylist } from './functions';
 
 export const list = document.querySelector("#todo-data");
 const data = [
@@ -14,7 +14,7 @@ const data = [
     index: 2,
   },
   {
-    description:'Hack NASA',
+    description: 'Hack NASA',
     completed: false,
     index: 2,
   },

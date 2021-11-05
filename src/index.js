@@ -1,26 +1,27 @@
 import './styles.css';
-import displaylist from './functions';
+import { todoList } from './functions'
 
-export const list = document.querySelector('#todo-data');
+
+const list = document.querySelector('#todo-data');
 const data = [
   {
-    description: 'Go swimming',
-    completed: true,
+    itemText: 'Go Swimming',
+    completed: false,
     index: 1,
   },
   {
-    description: 'Create an animated puppet',
+    itemText: 'Take a hike',
     completed: false,
     index: 2,
   },
   {
-    description: 'Hack NASA',
+    itemText: 'Hack NASA',
     completed: false,
-    index: 2,
+    index: 3,
   },
 ];
 
-export const todos = data.sort((a, b) => {
+const todos = data.sort((a, b) => {
   const indexA = a.index;
   const indexB = b.index;
 
@@ -33,4 +34,13 @@ export const todos = data.sort((a, b) => {
   return 0;
 });
 
-window.addEventListener('load', displaylist(todos, list));
+
+let getStorage =  JSON.parse(localStorage.getItem('todos'));
+ 
+if (getStorage!==null) {
+  data = getStorage;
+}
+
+window.addEventListener('load', () => {
+  todoList(todos, list);
+});
